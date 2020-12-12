@@ -6,7 +6,7 @@
 
 
 body{
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Rajdhani', sans-serif !important;
 }
 
 .nav-custom{
@@ -21,10 +21,17 @@ body{
 
 .navbar-ul li{
   list-style-type: none;
-  padding: 1em;
-  color: black;
+  padding: 1.25em;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  height: 100%;
 
+}
+
+.navbar-ul li:hover{
+  background: rgba(0, 0, 0, 0.2) ;
+  border-radius: 0.5em;
 }
 
 .brand-logo{
@@ -35,6 +42,7 @@ body{
 .brand-logo-img{
   width: 60px;
   padding: 0.2em;
+  cursor: pointer;
 }
 
 .brand-name{
@@ -47,7 +55,7 @@ body{
 
 .side-menu-icon{
   display: inline-block;
-  padding-right: 1.4em;
+  padding-right: 1em;
   font-size: 1.8em;
   color: white;
   cursor: pointer;
@@ -56,5 +64,11 @@ body{
 .sidebar-list{
   display: inline-block;
   float: right;
+
+}
+
+.active{
+  background: rgba(0, 0, 0, 0.2) ;
+  border-radius: 0.5em;
 
 }
