@@ -20,7 +20,7 @@ const SideNavbar = (props) => {
         <div id="mySidenav" className="sidenav">
             <span className="close-btn" onClick={() => closeSideNavButton()}><AiFillLeftCircle/></span>
             <div className='title-name-sidenav'>
-                <span className='text-center'>
+                <span className='text-center text-uppercase'>
                     Dashboard
                 </span>
             </div>
