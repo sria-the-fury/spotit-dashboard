@@ -27,9 +27,9 @@ const SideNavbar = (props) => {
             <ul className="sidenav-ul text-uppercase">
                 <li className={getPathName === '/' ? 'sidenav-active' : 'blank'} onClick={() => closeSideNavButton()}>
                     <Link to='/' style={{textDecoration: 'none', color: 'white'}}>
-                        <i className='sidenav-icons'>
+                        <span className='sidenav-icons'>
                             <AiFillHome/>
-                        </i>
+                        </span>
                         <span className='sidenav-icons-desc'>
                         Home
                     </span>
@@ -38,9 +38,9 @@ const SideNavbar = (props) => {
 
                 <li className={getPathName === '/post-jobs' ? 'sidenav-active' : 'blank'} onClick={() => closeSideNavButton()}>
                     <Link to='/post-jobs' style={{textDecoration: 'none', color: 'white'}}>
-                        <i className='sidenav-icons'>
+                        <span className='sidenav-icons'>
                             <IoIosCreate/>
-                        </i>
+                        </span>
                         <span className='sidenav-icons-desc'>
                         POST JOBS
                     </span>
@@ -50,9 +50,9 @@ const SideNavbar = (props) => {
 
                 <li className={getPathName === '/applications' ? 'sidenav-active' : 'blank'} onClick={() => closeSideNavButton()}>
                     <Link to='/applications' style={{textDecoration: 'none', color: 'white'}}>
-                        <i className='sidenav-icons'>
+                        <span className='sidenav-icons'>
                             <FaWpforms/>
-                        </i>
+                        </span>
                         <span className='sidenav-icons-desc'>
                         Applications
                     </span>
@@ -62,9 +62,9 @@ const SideNavbar = (props) => {
 
                 <li className={getPathName === '/client-booking' ? 'sidenav-active' : 'blank'} onClick={() => closeSideNavButton()}>
                     <Link to='/client-booking' style={{textDecoration: 'none', color: 'white'}}>
-                        <i className='sidenav-icons'>
+                        <span className='sidenav-icons'>
                             <FaCalendarCheck/>
-                        </i>
+                        </span>
                         <span className='sidenav-icons-desc'>
                         Client Booking
                     </span>

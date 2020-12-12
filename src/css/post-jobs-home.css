@@ -1,0 +1,22 @@
+.post-plus-icon{
+    font-size: 1.3em;
+    padding-right: 0.5em;
+}
+
+.area-for-post-btn{
+   display: flex;
+    justify-content: center;
+}
+
+.jobs-card{
+    background: #ffa726;
+    min-height: 8em;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.card-hover:hover{
+    box-shadow: 10px 8px 2px 2px rgba(0,0,0, 0.2);
+    cursor: pointer;
+    transform: scale(1.01);
+}
