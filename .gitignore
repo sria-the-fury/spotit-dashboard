@@ -3,3 +3,9 @@
 node_modules/
 
 .eslintcache
+
+.firebaserc
+
+.firebase/
+
+build/

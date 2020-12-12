@@ -11,7 +11,7 @@ body{
 
 .nav-custom{
   background: #ffa726;
-  height: 4em;
+  height: 3.8em;
   overflow: hidden;
 }
 
@@ -21,7 +21,7 @@ body{
 
 .navbar-ul li{
   list-style-type: none;
-  padding: 1.25em;
+  padding: 1.19em;
   color: white;
   font-weight: bold;
   cursor: pointer;
