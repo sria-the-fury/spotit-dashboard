@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Rajdhani&display=swap');
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+body{
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.nav-custom{
+  background: #ffa726;
+  height: 4em;
+  overflow: hidden;
+}
+
+.navbar-ul{
+  display: flex;
+}
+
+.navbar-ul li{
+  list-style-type: none;
+  padding: 1em;
+  color: black;
+  font-weight: bold;
+
+}
+
+.brand-logo{
+  display: inline-block;
+
+}
+
+.brand-logo-img{
+  width: 60px;
+  padding: 0.2em;
+}
+
+.brand-name{
+
+  font-weight: bold;
+  font-size: 1.3em;
+  font-family: 'Goldman', cursive;
+
+}
+
+.side-menu-icon{
+  display: inline-block;
+  padding-right: 1.4em;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-list{
+  display: inline-block;
+  float: right;
+
+}
