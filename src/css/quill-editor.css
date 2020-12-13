@@ -1,0 +1,39 @@
+.ql-toolbar {
+    background: lavender !important;
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding-bottom: 1.3em !important;
+}
+.ql-container {
+    min-height: 5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    overflow: auto;
+    font-size: 15px !important;
+    background: #fefcfc;
+}
+
+.ql-editor{
+    color: black;
+    overflow: auto;
+    max-height: 350px !important;
+    line-height: normal !important;
+}
+
+
+.ql-align-justify{
+    text-align: justify;
+}
+
+.ql-align-right {
+    text-align: right;
+}
+
+.ql-align-left {
+    text-align: left;
+}
+
+.ql-align-center {
+    text-align: center;
+}

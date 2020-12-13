@@ -4,11 +4,25 @@ import Home from "./components/home/Home";
 import PostJobsHome from "./components/post-jobs/PostJobsHome";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import JobsForm from "./components/post-jobs/JobsForm";
+import {ToastContainer} from "react-toastify";
 
 function App() {
     return (
         <BrowserRouter>
             <Navbar/>
+            <div className="text-center">
+                <ToastContainer
+                    position="bottom-center"
+                    autoClose={3000}
+                    hideProgressBar={true}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    draggable
+                    pauseOnHover={false}
+                />
+
+            </div>
             <Switch>
 
                 <Route exact path='/' component={Home}/>
@@ -16,8 +30,6 @@ function App() {
                 <Route path='/post-jobs-form' component={JobsForm}/>
             </Switch>
         </BrowserRouter>
-
-
 
 
     );

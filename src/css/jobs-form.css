@@ -15,3 +15,28 @@
 .col-in-form{
     padding-top: 0.5em;
 }
+
+.custom-checkbox-for-job-type{
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    border-radius: 1.5em;
+    overflow: hidden;
+    justify-content: space-evenly;
+}
+
+.custom-checkbox-for-job-type span{
+    width: 33.3%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+
+}
+
+.custom-checkbox-for-job-type span:hover{
+    background: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+.active-check{
+    background: rgba(0, 0, 0, 1);
+    border-radius: 0;
+}
