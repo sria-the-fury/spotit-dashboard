@@ -12,13 +12,13 @@ const Home = () => {
                     <div className="card-dashboard-jobs text-white text-uppercase">
                         <div className="job-type text-center">
                             <div className='seen'>
-                                <span className='seen-text'> <AiFillEye/> : </span>
+                                <span className='seen-text'> <AiFillEye/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 
                             <span className='font-weight-bold job-card-header'>Full-Time</span>
                             <div className='unseen'>
-                                <span className='unseen-text'> <AiFillEyeInvisible/> : </span>
+                                <span className='unseen-text'> <AiFillEyeInvisible/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 
@@ -78,13 +78,13 @@ const Home = () => {
                     <div className="card-dashboard-jobs text-white text-uppercase">
                         <div className="job-type text-center">
                             <div className='seen'>
-                                <span className='seen-text'> <AiFillEye/> : </span>
+                                <span className='seen-text'> <AiFillEye/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 
                             <span className='font-weight-bold job-card-header'>PART-Time</span>
                             <div className='unseen'>
-                                <span className='unseen-text'> <AiFillEyeInvisible/> : </span>
+                                <span className='unseen-text'> <AiFillEyeInvisible/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 
@@ -144,13 +144,13 @@ const Home = () => {
                     <div className="card-dashboard-jobs text-white text-uppercase">
                         <div className="job-type text-center">
                             <div className='seen'>
-                                <span className='seen-text'> <AiFillEye/> : </span>
+                                <span className='seen-text'> <AiFillEye/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 
                             <span className='font-weight-bold job-card-header'>INTERNSHIP</span>
                             <div className='unseen'>
-                                <span className='unseen-text'> <AiFillEyeInvisible/> : </span>
+                                <span className='unseen-text'> <AiFillEyeInvisible/>  </span>
                                 <span className='number-text'>99</span>
                             </div>
 

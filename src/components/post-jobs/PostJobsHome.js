@@ -1,6 +1,7 @@
 import React from 'react';
-import {BsFillPlusCircleFill} from "react-icons/all";
+import {BsPencilSquare} from "react-icons/all";
 import "../../css/post-jobs-home.css";
+import {Link} from "react-router-dom";
 
 const PostJobsHome = () => {
     return (
@@ -11,11 +12,12 @@ const PostJobsHome = () => {
             <div className='row'>
                 <div className="col-lg-12">
                     <div className="area-for-post-btn">
-                        <button className='app-btn-color btn-success btn text-white'>
-                            <span className='post-plus-icon'><BsFillPlusCircleFill/></span>
-                            <span className='font-weight-bold text-uppercase'>Post Jobs</span>
-
-                        </button>
+                        <Link to="/post-jobs-form" style={{textDecoration: 'none'}}>
+                            <span className='app-btn-color text-white post-write-btn'>
+                                <span className='post-plus-icon'><BsPencilSquare/></span>
+                                <span className='font-weight-bold text-uppercase'>Post Jobs</span>
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </div>
