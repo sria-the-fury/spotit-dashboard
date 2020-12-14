@@ -1,0 +1,43 @@
+.post-job-card{
+    background: #16153d;
+    min-height: 7em;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5em;
+
+}
+
+.post-job-card:hover{
+    box-shadow: 4px 5px 6px 2px rgba(0, 0, 0, 0.6);
+    transform: scale(1.01);
+}
+
+.post-job-desc-card{
+    height: 2.6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+}
+
+.post-job-position-posted-time{
+    padding-top: 0.5em;
+    color: #ffa726;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-delete-edit-are{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.post-delete-edit-are span:hover{
+    cursor: pointer;
+
+}
+
+.row-posted-job{
+    padding-top: 0;
+}

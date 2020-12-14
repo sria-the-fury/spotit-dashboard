@@ -11,17 +11,17 @@ import {Spinner} from "react-bootstrap";
 const PostJobsHome = (props) => {
     const {allJobs} = props;
 
-    const findFullTimeJobs = allJobs ?  _.find(allJobs, {
-        "jobType" : "1"
-    }) : '';
-
-    const findInternshipJobs = allJobs ? _.find(allJobs, {
-        "jobType" : "3"
-    }) : '';
-
-    const findPartTimeJobs = allJobs ? _.find(allJobs, {
-        "jobType" : "2"
-    }) : '';
+    // const findFullTimeJobs = allJobs ?  _.find(allJobs, {
+    //     "jobType" : "1"
+    // }) : '';
+    //
+    // const findInternshipJobs = allJobs ? _.find(allJobs, {
+    //     "jobType" : "3"
+    // }) : '';
+    //
+    // const findPartTimeJobs = allJobs ? _.find(allJobs, {
+    //     "jobType" : "2"
+    // }) : '';
 
     const countFullTimePostedJobs = allJobs ? _.filter(allJobs, {
         "jobType" : "1"
@@ -34,10 +34,6 @@ const PostJobsHome = (props) => {
     const countInternshipPostedJobs = allJobs ? _.filter(allJobs, {
         "jobType" : "3"
     }) : '' ;
-
-    console.log("allJobs=>", findFullTimeJobs);
-    console.log("countFullTimePostedJobs=>", countFullTimePostedJobs.length);
-    console.log("countInternshipPostedJobs=>", countInternshipPostedJobs.length);
 
 
     if(allJobs){return (
@@ -63,24 +59,49 @@ const PostJobsHome = (props) => {
 
             <div className='row'>
                 <div className="col-sm-12 col-md-6 col-lg-4">
-                    <div className="jobs-card text-white card-hover">
-                        <div className="job-type">
-                            <h4 className='font-weight-bold text-center text-uppercase'>Full-Time</h4>
-                        </div>
-
-                        {
-                            countFullTimePostedJobs.length > 0 ?
-                                <div className='text-center'>
-                                    <h5 className='font-weight-bold'>You have posted : {countFullTimePostedJobs.length} jobs</h5>
-                                </div> :
-                                <div className='text-center'>
-                                    <h5 className='font-weight-bold'>You don't give any post yet</h5>
+                    {countFullTimePostedJobs.length > 0 ?
+                        <Link to='/post-jobs/full-time/cards' style={{textDecoration: 'none'}}>
+                            <div className="jobs-card text-white card-hover">
+                                <div className="job-type">
+                                    <h4 className='font-weight-bold text-center text-uppercase'>Full-Time</h4>
                                 </div>
 
-                        }
+                                {
+                                    countFullTimePostedJobs.length > 0 ?
+                                        <div className='text-center'>
+                                            <h5 className='font-weight-bold'>You have posted
+                                                : {countFullTimePostedJobs.length} jobs</h5>
+                                        </div> :
+                                        <div className='text-center'>
+                                            <h5 className='font-weight-bold'>You don't give any post yet</h5>
+                                        </div>
+
+                                }
 
 
-                    </div>
+                            </div>
+                        </Link> :
+                        <div className="jobs-card text-white card-hover">
+                            <div className="job-type">
+                                <h4 className='font-weight-bold text-center text-uppercase'>Full-Time</h4>
+                            </div>
+
+                            {
+                                countFullTimePostedJobs.length > 0 ?
+                                    <div className='text-center'>
+                                        <h5 className='font-weight-bold'>You have posted : {countFullTimePostedJobs.length} jobs</h5>
+                                    </div> :
+                                    <div className='text-center'>
+                                        <h5 className='font-weight-bold'>You don't give any post yet</h5>
+                                    </div>
+
+                            }
+
+
+                        </div>
+
+                    }
+
                 </div>
 
                 <div className="col-sm-12 col-md-6 col-lg-4">

@@ -5,7 +5,6 @@ import 'react-quill/dist/quill.snow.css';
 import "../../css/quill-editor.css";
 import {addJobPost} from "../../actions/jobPostAction";
 import {connect} from "react-redux";
-import {ToastContainer} from "react-toastify";
 
 const JobsForm = (props) => {
 
@@ -109,18 +108,6 @@ const JobsForm = (props) => {
     return (
         <div className='container' style={{marginTop: '5em'}}>
 
-            <div className="text-center" style={{width: "50px"}}>
-                <ToastContainer
-                    position="bottom-center"
-                    autoClose={3000}
-                    hideProgressBar={true}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    draggable
-                    pauseOnHover={false}
-                />
-            </div>
             <h3 className="font-weight-bold text-center text-uppercase heading">Post Jobs for your Org.</h3>
             <hr className='hr-heading'/>
             <div className="form-color-area">
