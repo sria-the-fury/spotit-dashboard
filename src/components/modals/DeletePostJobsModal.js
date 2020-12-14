@@ -47,7 +47,7 @@ const DeletePostJobsModal = (props) => {
                 </div>
                 <div className="row row-for-modals">
                     <div className="col-12 col-for-modals">
-                        <p className="text-light">Are you sure to delete your Thought?</p>
+                        <p className="text-light">Are you sure to delete this Job?</p>
                     </div>
                 </div>
 

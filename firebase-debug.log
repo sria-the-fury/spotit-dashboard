@@ -1,0 +1,13 @@
+[debug] [2020-12-14T15:23:04.252Z] ----------------------------------------------------------------------
+[debug] [2020-12-14T15:23:04.256Z] Command:       /usr/bin/node /usr/bin/firebase deploy --only hosting:dashboard
+[debug] [2020-12-14T15:23:04.257Z] CLI Version:   8.10.0
+[debug] [2020-12-14T15:23:04.257Z] Platform:      linux
+[debug] [2020-12-14T15:23:04.257Z] Node Version:  v12.20.0
+[debug] [2020-12-14T15:23:04.258Z] Time:          Mon Dec 14 2020 21:23:04 GMT+0600 (Bangladesh Standard Time)
+[debug] [2020-12-14T15:23:04.259Z] ----------------------------------------------------------------------
+[debug] [2020-12-14T15:23:04.259Z] 
+[debug] [2020-12-14T15:23:04.272Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-14T15:23:04.273Z] > authorizing via signed-in user
+[debug] [2020-12-14T15:23:04.274Z] [iam] checking project spot-it-usa for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-12-14T15:23:04.280Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spot-it-usa:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
