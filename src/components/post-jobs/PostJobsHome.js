@@ -126,7 +126,7 @@ const PostJobsHome = (props) => {
                                     </div>
                                     <div className='text-center'>
                                         <h5 className='font-weight-bold'>You have posted : {countInternshipPostedJobs.length} jobs</h5>
-                                    </div> :
+                                    </div>
 
                                 </div>
 
@@ -141,7 +141,6 @@ const PostJobsHome = (props) => {
                                 </div>
 
                             </div>
-
                     }
 
                 </div>
