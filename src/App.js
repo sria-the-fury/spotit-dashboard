@@ -5,7 +5,7 @@ import PostJobsHome from "./components/post-jobs/PostJobsHome";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import JobsForm from "./components/post-jobs/JobsForm";
 import {ToastContainer} from "react-toastify";
-import FullTimeJobs from "./components/post-jobs/full-time-jobs/FullTimeJobs";
+import Jobs from "./components/post-jobs/Job-type-cards/Jobs";
 import JobDetails from "./components/post-jobs/JobDetails";
 
 function App() {
@@ -29,9 +29,9 @@ function App() {
 
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/post-jobs' component={PostJobsHome}/>
-                <Route path='/post-jobs/full-time/cards' component={FullTimeJobs}/>
+                <Route path='/post-jobs/:jobType/cards' component={Jobs}/>
                 <Route path='/post-jobs/:jobType/:id' component={JobDetails}/>
-                <Route path='/post-jobs-form' component={JobsForm}/>
+                <Route exact path='/post-jobs-form' component={JobsForm}/>
             </Switch>
         </BrowserRouter>
 

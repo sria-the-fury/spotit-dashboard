@@ -1,0 +1,24 @@
+.posted-job-details{
+    background: #1b1e21;
+    color: white;
+    padding: 1em;
+    border-radius: 0.7em;
+}
+
+.icons-in-details{
+    font-size: 1.4em;
+}
+
+.icons-in-details:hover{
+    cursor: pointer;
+    color: #ffa726;
+}
+
+.go-back-delete-update-icons-are{
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-title-details{
+    margin-top: 0.5em;
+}

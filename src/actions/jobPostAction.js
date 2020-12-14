@@ -14,7 +14,7 @@ export const addJobPost = (formsInfo, jobType) =>{
                     type: "JOB_POST",
                     formsInfo, jobType
                 });
-            }).catch( jobPostError => {
+            }).catch(jobPostError => {
                 dispatch({
                     type: "JOB_POST_ERROR",
                     jobPostError
@@ -23,4 +23,22 @@ export const addJobPost = (formsInfo, jobType) =>{
         });
 
     }
-}
+};
+
+
+export const removePostedJob = jobID => {
+    return ( dispatch, getState, { getFirebase }) => {
+        const firestore = getFirebase().firestore();
+        firestore.collection("jobs").doc(jobID)
+            .delete().then(() => {
+            dispatch({
+                type: "REMOVE_POSTED_JOB",
+            });
+        }).catch( removePostJobError => {
+            dispatch({
+                type: "REMOVE_POSTED_JOB_ERROR",
+                removePostJobError
+            });
+        });
+    };
+};

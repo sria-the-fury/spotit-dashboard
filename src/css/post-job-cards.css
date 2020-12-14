@@ -1,9 +1,20 @@
 .post-job-card{
-    background: #16153d;
     min-height: 7em;
     padding: 0.5em 0.8em;
     border-radius: 0.5em;
 
+}
+
+.full-time-card-bg{
+    background: #16153d;
+}
+
+.part-time-card-bg{
+    background: #3f0b1d;
+}
+
+.internship-card-bg{
+    background: #351c10;
 }
 
 .post-job-card:hover{
@@ -12,7 +23,7 @@
 }
 
 .post-job-desc-card{
-    height: 2.6em;
+    height: 2.7em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;

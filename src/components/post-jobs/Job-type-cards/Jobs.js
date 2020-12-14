@@ -1,5 +1,5 @@
 import React from 'react';
-import FullTimeJobCards from "./FullTimeJobCards";
+import PostedJobCards from "./PostedJobCards";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {firestoreConnect} from "react-redux-firebase";
@@ -7,21 +7,30 @@ import _ from "lodash";
 import "../../../css/post-job-cards.css";
 import {Spinner} from "react-bootstrap";
 
-const FullTimeJobs = (props) => {
-    const  {FullTimeJobs} = props;
+const Jobs = (props) => {
 
-    if(FullTimeJobs.length) {
+    const {AllPostedJobs, match} = props;
+    const {jobType} = match.params;
+
+
+    const getJobTypeText = jobType === '1' ? "Full-Time" : jobType === '2' ? "Part-Time" : "Internship";
+
+    let jobsByJobType = AllPostedJobs ?  _.filter(AllPostedJobs, {
+        "jobType": jobType
+    }) : '';
+
+    if(jobsByJobType.length) {
 
         return (
             <div className='container' style={{marginTop: '5em'}}>
-                <h3 className='heading text-uppercase font-weight-bold text-center'>Jobs - Full time </h3>
+                <h3 className='heading text-uppercase font-weight-bold text-center'>Jobs : {getJobTypeText} </h3>
                 <hr className='hr-heading'/>
                 <div className='container'>
                     <div className="row row-posted-job">
                         {
-                            FullTimeJobs && _.map(FullTimeJobs, (fullTimeJob) => {
+                            jobsByJobType && _.map(jobsByJobType, (jobByJobType) => {
                                 return (
-                                    <FullTimeJobCards fullTimeJob={fullTimeJob} key={fullTimeJob.id}/>
+                                    <PostedJobCards jobByJobType={jobByJobType} key={jobByJobType.id}/>
                                 )
                             })
                         }
@@ -46,11 +55,8 @@ const FullTimeJobs = (props) => {
 
 const mapStateToProps = (state) => {
     let AllPostedJobs = state.firestore.ordered.jobs;
-    let FullTimeJobs = AllPostedJobs ?  _.filter(AllPostedJobs, {
-        "jobType": "1"
-    }) : '';
     return{
-        FullTimeJobs: FullTimeJobs
+        AllPostedJobs: AllPostedJobs
 
     }
 
@@ -64,4 +70,4 @@ export default compose(
             orderBy: ["date", "desc"]
 
         }
-    ]))(FullTimeJobs);
+    ]))(Jobs);

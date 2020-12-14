@@ -113,3 +113,11 @@ body{
   position: absolute;
   justify-items: center;
 }
+
+
+.row-for-modals{
+  padding: 0;
+}
+.col-for-modals{
+  padding-top: 0;
+}

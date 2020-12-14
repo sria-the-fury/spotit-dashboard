@@ -60,24 +60,16 @@ const PostJobsHome = (props) => {
             <div className='row'>
                 <div className="col-sm-12 col-md-6 col-lg-4">
                     {countFullTimePostedJobs.length > 0 ?
-                        <Link to='/post-jobs/full-time/cards' style={{textDecoration: 'none'}}>
+                        <Link to={'/post-jobs/'+1+'/cards'} style={{textDecoration: 'none'}}>
                             <div className="jobs-card text-white card-hover">
                                 <div className="job-type">
                                     <h4 className='font-weight-bold text-center text-uppercase'>Full-Time</h4>
                                 </div>
 
-                                {
-                                    countFullTimePostedJobs.length > 0 ?
-                                        <div className='text-center'>
-                                            <h5 className='font-weight-bold'>You have posted
-                                                : {countFullTimePostedJobs.length} jobs</h5>
-                                        </div> :
-                                        <div className='text-center'>
-                                            <h5 className='font-weight-bold'>You don't give any post yet</h5>
-                                        </div>
-
-                                }
-
+                                <div className='text-center'>
+                                    <h5 className='font-weight-bold'>You have posted
+                                        : {countFullTimePostedJobs.length} jobs</h5>
+                                </div>
 
                             </div>
                         </Link> :
@@ -85,19 +77,9 @@ const PostJobsHome = (props) => {
                             <div className="job-type">
                                 <h4 className='font-weight-bold text-center text-uppercase'>Full-Time</h4>
                             </div>
-
-                            {
-                                countFullTimePostedJobs.length > 0 ?
-                                    <div className='text-center'>
-                                        <h5 className='font-weight-bold'>You have posted : {countFullTimePostedJobs.length} jobs</h5>
-                                    </div> :
-                                    <div className='text-center'>
-                                        <h5 className='font-weight-bold'>You don't give any post yet</h5>
-                                    </div>
-
-                            }
-
-
+                            <div className='text-center'>
+                                <h5 className='font-weight-bold'>You don't give any post yet</h5>
+                            </div>
                         </div>
 
                     }
@@ -105,43 +87,64 @@ const PostJobsHome = (props) => {
                 </div>
 
                 <div className="col-sm-12 col-md-6 col-lg-4">
-                    <div className="jobs-card text-white card-hover">
-                        <div className="job-type">
-                            <h4 className='font-weight-bold text-center text-uppercase'>Part Time</h4>
-                        </div>
-                        {
-                            countPartTimePostedJobs.length > 0 ?
-                                <div className='text-center'>
-                                    <h5 className='font-weight-bold'>You have posted : {countPartTimePostedJobs.length} jobs</h5>
-                                </div> :
+                    {
+                        countPartTimePostedJobs.length > 0 ?
+                            <Link to={'/post-jobs/'+2+'/cards'} style={{textDecoration: 'none'}}>
+                                <div className="jobs-card text-white card-hover">
+                                    <div className="job-type">
+                                        <h4 className='font-weight-bold text-center text-uppercase'>Part Time</h4>
+                                    </div>
+
+                                    <div className='text-center'>
+                                        <h5 className='font-weight-bold'>You have posted : {countPartTimePostedJobs.length} jobs</h5>
+                                    </div>
+
+                                </div>
+                            </Link> :
+                            <div className="jobs-card text-white card-hover">
+                                <div className="job-type">
+                                    <h4 className='font-weight-bold text-center text-uppercase'>Part Time</h4>
+                                </div>
+
                                 <div className='text-center'>
                                     <h5 className='font-weight-bold'>You don't give any post yet</h5>
                                 </div>
 
-                        }
+                            </div>
 
-
-
-                    </div>
+                    }
+                    
                 </div>
 
                 <div className="col-sm-12 col-md-6 col-lg-4">
-                    <div className="jobs-card text-white card-hover">
-                        <div className="job-type">
-                            <h4 className='font-weight-bold text-center text-uppercase'>Internship</h4>
-                        </div>
-                        {
-                            countInternshipPostedJobs.length > 0 ?
-                                <div className='text-center'>
-                                    <h5 className='font-weight-bold'>You have posted : {countInternshipPostedJobs.length} jobs</h5>
-                                </div> :
+                    {
+                        countInternshipPostedJobs.length > 0
+                            ?
+                            <Link to={'/post-jobs/'+3+'/cards'} style={{textDecoration: 'none'}}>
+                                <div className="jobs-card text-white card-hover">
+                                    <div className="job-type">
+                                        <h4 className='font-weight-bold text-center text-uppercase'>Internship</h4>
+                                    </div>
+                                    <div className='text-center'>
+                                        <h5 className='font-weight-bold'>You have posted : {countInternshipPostedJobs.length} jobs</h5>
+                                    </div> :
+
+                                </div>
+
+                            </Link> :
+                            <div className="jobs-card text-white card-hover">
+                                <div className="job-type">
+                                    <h4 className='font-weight-bold text-center text-uppercase'>Internship</h4>
+                                </div>
+
                                 <div className='text-center'>
                                     <h5 className='font-weight-bold'>You don't give any post yet</h5>
                                 </div>
 
-                        }
+                            </div>
 
-                    </div>
+                    }
+
                 </div>
             </div>
 
