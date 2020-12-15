@@ -9,7 +9,7 @@ import {Spinner} from "react-bootstrap";
 
 const Jobs = (props) => {
 
-    const {AllPostedJobs, match} = props;
+    const {AllPostedJobs, match, history} = props;
     const {jobType} = match.params;
 
 
@@ -18,6 +18,12 @@ const Jobs = (props) => {
     let jobsByJobType = AllPostedJobs ?  _.filter(AllPostedJobs, {
         "jobType": jobType
     }) : '';
+
+    const jobsLength = jobsByJobType.length;
+
+    const goBackPrevious = () => {
+        history.goBack();
+    };
 
     if(jobsByJobType.length) {
 
@@ -30,7 +36,7 @@ const Jobs = (props) => {
                         {
                             jobsByJobType && _.map(jobsByJobType, (jobByJobType) => {
                                 return (
-                                    <PostedJobCards jobByJobType={jobByJobType} key={jobByJobType.id}/>
+                                    <PostedJobCards jobByJobType={jobByJobType} key={jobByJobType.id} jobsLength={jobsLength} goBack={goBackPrevious}/>
                                 )
                             })
                         }

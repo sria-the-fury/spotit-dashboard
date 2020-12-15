@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../../css/job-details.css";
 import {FiArrowLeftCircle,BsFillTrashFill,FaPen} from  "react-icons/all";
 import {compose} from "redux";
@@ -8,16 +8,26 @@ import _ from "lodash";
 import moment from "moment";
 import parse from 'html-react-parser';
 import {Spinner} from "react-bootstrap";
+import {removePostedJob} from "../../actions/jobPostAction";
+import DeletePostJobsModal from "../modals/DeletePostJobsModal";
 
 const JobDetails = (props) => {
-    const {match, history, jobs} = props;
-    const {jobType, id} = match.params;
+    const {match, history, jobs, removePostedJob} = props;
+    const {jobType, id, jobsLength} = match.params;
 
 
     const goBackPrevious = () => {
         history.goBack();
 
     };
+
+    const [isOpenDeleteModal, setDeleteModal] = useState(false);
+    const closeDeleteModal = () => {
+        setDeleteModal(false);
+    };
+    const openDeleteModal = () => {
+        setDeleteModal(true);
+    }
 
     const findSpecificJobs = jobs ? _.find(jobs, {"id": id, "jobType" : jobType}) : '';
 
@@ -30,7 +40,9 @@ const JobDetails = (props) => {
             let jobDeadLineDate = findSpecificJobs.deadLine.toDate();
             return moment(jobDeadLineDate).format('ddd, Do MMM YYYY');
         }
-    }
+    };
+
+    const goBackFromDetailsToJobHome = jobsLength <= 1;
 
     if(findSpecificJobs) {
 
@@ -39,7 +51,7 @@ const JobDetails = (props) => {
                 <div className='posted-job-details'>
                     <div className="go-back-delete-update-icons-are">
                         <span className='icons-in-details' onClick={() => goBackPrevious()}><FiArrowLeftCircle/></span>
-                        <span className='text-danger icons-in-details'><BsFillTrashFill/></span>
+                        <span className='text-danger icons-in-details' onClick={() => openDeleteModal()}><BsFillTrashFill/></span>
                         <span className='icons-in-details'><FaPen/></span>
                     </div>
                     <div className="job-title-details">
@@ -52,7 +64,7 @@ const JobDetails = (props) => {
                             <thead>
                             <tr>
                                 <th>Job Title</th>
-                                <td className='font-weight-bold'>IT & Marketing Strategist</td>
+                                <td className='font-weight-bold'>{findSpecificJobs.jobTitle}</td>
                             </tr>
                             </thead>
                             <tbody>
@@ -88,6 +100,9 @@ const JobDetails = (props) => {
 
 
                 </div>
+                <DeletePostJobsModal isOpenModal={isOpenDeleteModal} isGoBack={goBackPrevious} GoBackTrue={true}
+                                     closeDeleteModal={closeDeleteModal} jobID={findSpecificJobs.id} goBackFromDetailsToJobHome={goBackFromDetailsToJobHome}
+                                     removePostedJob={removePostedJob}/>
 
             </div>
         );
@@ -109,10 +124,17 @@ const mapStateToProps = (state) => {
     return {
         jobs : jobs
     }
-}
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        removePostedJob: jobID => dispatch(removePostedJob(jobID))
+
+    }
+};
 
 export default compose(
-    connect(mapStateToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     firestoreConnect(
         [
             {

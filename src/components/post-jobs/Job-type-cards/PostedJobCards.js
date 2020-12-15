@@ -8,7 +8,8 @@ import {removePostedJob} from "../../../actions/jobPostAction";
 import {connect} from "react-redux";
 
 const PostedJobCards = (props) => {
-    const {jobByJobType, removePostedJob} = props;
+    const {jobByJobType, removePostedJob, jobsLength, goBack} = props;
+
 
     const [isOpenDeleteModal, setDeleteModal] = useState(false);
     const closeDeleteModal = () => {
@@ -36,10 +37,14 @@ const PostedJobCards = (props) => {
     };
 
     const getCardsBgColorClass = jobByJobType.jobType === '1' ? 'full-time-card-bg' : jobByJobType.jobType === '2' ? 'part-time-card-bg' : 'internship-card-bg';
+
+    const goBackFromCards = jobsLength <= 1 ? true : false;
+
+
     return (
         <div className="col-sm-12 col-md-6 col-lg-4 text-white" >
             <div className={'post-job-card '+getCardsBgColorClass}>
-                <Link to={'/post-jobs/'+jobByJobType.jobType+'/'+ jobByJobType.id} style={{textDecoration: 'none'}}>
+                <Link to={'/post-jobs/'+jobsLength+'/'+jobByJobType.jobType+'/'+ jobByJobType.id} style={{textDecoration: 'none'}}>
                     <div className="post-job-title-name-card text-center">
                         <h5 className='font-weight-bold'>{jobByJobType.jobTitle}</h5>
                     </div>
@@ -64,7 +69,10 @@ const PostedJobCards = (props) => {
             </div>
 
 
-            <DeletePostJobsModal isOpenModal={isOpenDeleteModal} closeDeleteModal={closeDeleteModal} jobID={jobByJobType.id} removePostedJob={removePostedJob}/>
+            <DeletePostJobsModal isOpenModal={isOpenDeleteModal} closeDeleteModal={closeDeleteModal}
+                                 jobID={jobByJobType.id} goBackFromCards={goBackFromCards} isGoBack={goBack}
+
+                                 removePostedJob={removePostedJob}/>
         </div>
     );
 }

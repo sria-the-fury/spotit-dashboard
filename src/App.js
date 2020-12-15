@@ -30,7 +30,7 @@ function App() {
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/post-jobs' component={PostJobsHome}/>
                 <Route path='/post-jobs/:jobType/cards' component={Jobs}/>
-                <Route path='/post-jobs/:jobType/:id' component={JobDetails}/>
+                <Route path='/post-jobs/:jobsLength/:jobType/:id' component={JobDetails}/>
                 <Route exact path='/post-jobs-form' component={JobsForm}/>
             </Switch>
         </BrowserRouter>

@@ -163,7 +163,6 @@ const PostJobsHome = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     const jobs = state.firestore.ordered.jobs;
     return{
         allJobs: jobs
