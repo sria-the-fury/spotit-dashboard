@@ -108,10 +108,13 @@ body{
 }
 
 .spinner-custom{
+  display: block;
   top: 50%;
-  left: 45%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  justify-items: center;
+  margin: -25px 0 0 -25px;
 }
 
 
@@ -120,4 +123,8 @@ body{
 }
 .col-for-modals{
   padding-top: 0;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
