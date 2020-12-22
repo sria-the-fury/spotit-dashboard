@@ -50,7 +50,7 @@ const DeletePostJobsModal = (props) => {
                     <div className="row row-for-modals">
                         <div className="col-12 col-for-modals">
                             <span className="text-warning delete-modal-header">Delete</span>
-                            <i className="float-right text-light" onClick={() => closeDeleteModal()}><FaArrowRight/></i>
+                            <i className="float-right text-light cursor-pointer" onClick={() => closeDeleteModal()}><FaArrowRight/></i>
                         </div>
                     </div>
                     <div className="row row-for-modals">
